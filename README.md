@@ -1,26 +1,28 @@
-# Titanic Data Analysis with Python
+# Titanic Data Analysis
 
-A beginner-friendly data analysis project that explores the Titanic passenger dataset using **NumPy, Pandas, Matplotlib, and Seaborn**. The script demonstrates basic Python data analysis, data cleaning, descriptive statistics, and data visualization.
+A Python-based exploratory data analysis (EDA) project that examines Titanic passenger data using **Pandas, NumPy, Matplotlib, and Seaborn**. The project demonstrates data inspection, data cleaning, descriptive analysis, and visualization in a practical workflow.
 
-## Project Overview
+## Overview
 
-This project analyzes passenger information from the Titanic dataset to explore survival counts, passenger demographics, age distribution, fares, and relationships between selected numerical variables.
+The goal of this project is to explore passenger characteristics and survival patterns in the Titanic dataset. It is designed as a learning project for practicing core data analysis techniques with Python.
 
-## Features
+## Objectives
 
-- **NumPy basics:** calculate mean, minimum, maximum, sum, and sort an array.
-- **Explore data with Pandas:** view rows, dataset dimensions, column names, summary statistics, and data types.
-- **Clean the data:** inspect missing values, fill missing ages with the mean, fill missing embarkation ports with the mode, drop the `Cabin` column, remove duplicate rows, and reset the index.
-- **Analyze data:** count survivors, inspect passenger classes and gender counts, group passengers by gender, and sort passengers by age.
-- **Visualize data:** generate eight charts using Matplotlib and Seaborn.
+- Load and inspect a CSV dataset using Pandas.
+- Identify and handle missing values and duplicate records.
+- Summarize passenger survival, gender, age, class, and fare information.
+- Apply basic numerical operations with NumPy.
+- Create visualizations to communicate patterns in the data.
 
-## Technologies Used
+## Tech Stack
 
-- Python 3
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| Pandas | Data loading, cleaning, grouping, and analysis |
+| NumPy | Numerical operations and summary calculations |
+| Matplotlib | Chart creation |
+| Seaborn | Statistical visualizations |
 
 ## Project Structure
 
@@ -40,99 +42,113 @@ titanic-data-analysis/
 └── README.md
 ```
 
-The graph image files are created when the script runs. Keep `titanic_data.csv` in the same folder as `titanic_analysis.py`.
+*Note: The chart images are generated when the script runs. Keep the CSV dataset in the same directory as the Python script.*
 
-## Visualizations
+## Analysis and Visualizations
 
-The script creates these charts:
+The script produces the following charts:
 
-1. **Survival count** — number of passengers who survived and did not survive.
-2. **Gender distribution** — proportion of male and female passengers.
-3. **Age distribution** — histogram of passenger ages.
-4. **Fare by passenger ID** — fares for the first 100 passengers.
-5. **Survival by gender** — survival counts grouped by gender.
-6. **Age by passenger class** — box plot of age distributions for each class.
-7. **Correlation heatmap** — correlations between survival, passenger class, age, and fare.
-8. **Average fare by passenger class** — average fare for each passenger class.
+1. **Survival Count** — compares passengers who survived with those who did not.
+2. **Gender Distribution** — shows the distribution of passengers by gender.
+3. **Age Distribution** — displays the distribution of passenger ages.
+4. **Fare by Passenger ID** — plots fares for the first 100 passengers.
+5. **Survival by Gender** — compares survival counts across genders.
+6. **Age by Passenger Class** — compares age distributions across passenger classes.
+7. **Correlation Heatmap** — visualizes correlations among selected numeric columns.
+8. **Average Fare by Passenger Class** — compares average fares across passenger classes.
 
 ## Getting Started
 
-### 1. Install Python
+### Prerequisites
 
-Install Python 3 from [python.org](https://www.python.org/downloads/) if it is not already installed.
+- Python 3.9 or later recommended
+- `pip`
 
-### 2. Download or clone the repository
+### 1. Get the project
 
-If the project is on GitHub, clone it using:
+If the project is hosted on GitHub, clone the repository:
 
 ```bash
 git clone <your-repository-url>
 cd <your-repository-folder>
 ```
 
-Alternatively, download the repository ZIP and extract it.
+Alternatively, download and extract the project ZIP.
 
-### 3. (Optional) Create a virtual environment
+### 2. Create a virtual environment (recommended)
 
-**Windows (PowerShell):**
+**Windows PowerShell**
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-If PowerShell blocks activation, you can run the script using the virtual environment's Python directly, or use Command Prompt:
+If you use Command Prompt instead:
 
 ```cmd
 .venv\Scripts\activate.bat
 ```
 
-### 4. Install the required libraries
+### 3. Install dependencies
 
 ```bash
 python -m pip install numpy pandas matplotlib seaborn
 ```
 
-### 5. Run the analysis
+### 4. Run the analysis
 
-Make sure `titanic_analysis.py` and `titanic_data.csv` are in the same directory, then run:
+Ensure `titanic_analysis.py` and `titanic_data.csv` are in the same folder, then run:
 
 ```bash
 python titanic_analysis.py
 ```
 
-The script prints analysis results in the terminal, displays charts, and saves the eight chart images in the project folder. Close each chart window to continue if your Python environment displays plots one at a time.
+The script prints analysis results in the terminal, displays plots, and saves chart images to the current working directory. If plots appear in separate windows, close each window to continue.
 
 ## Dataset
 
-The file `titanic_data.csv` contains passenger information such as:
+The project uses `titanic_data.csv`. Relevant columns include:
 
-- `Survived` — `0` means did not survive; `1` means survived.
-- `Pclass` — passenger class.
-- `Sex` and `Age` — passenger demographics.
-- `SibSp` and `Parch` — family relationships aboard.
-- `Fare` — fare paid.
-- `Embarked` — port of embarkation.
+| Column | Description |
+|---|---|
+| `Survived` | Survival indicator: `0` = did not survive, `1` = survived |
+| `Pclass` | Passenger class |
+| `Sex` | Passenger gender |
+| `Age` | Passenger age |
+| `SibSp` | Number of siblings/spouses aboard |
+| `Parch` | Number of parents/children aboard |
+| `Fare` | Passenger fare |
+| `Embarked` | Port of embarkation |
 
-The script makes cleaning changes in memory; it does **not** overwrite the original CSV file.
+## Data Cleaning
 
-## Key Learning Outcomes
+The script demonstrates several common preprocessing operations:
 
-By working through this project, you can practice:
+- Checking missing values.
+- Filling missing `Age` values with the mean.
+- Filling missing `Embarked` values with the mode.
+- Dropping the `Cabin` column due to extensive missing data.
+- Removing duplicate rows and resetting the index.
 
-- Loading and inspecting CSV data.
-- Handling missing values and duplicate rows.
-- Using filtering, grouping, sorting, and concatenation in Pandas.
-- Calculating descriptive statistics with NumPy and Pandas.
-- Creating charts and a correlation heatmap.
-- Organizing a small Python data analysis project for GitHub.
+These transformations are performed in memory; the original CSV file is not overwritten.
 
-## Notes and Limitations
+## Key Takeaways
 
-- This is an exploratory data analysis project, not a machine-learning model.
-- Filling missing ages with the mean is a simple learning example; other approaches may be more appropriate for deeper analysis.
-- The `Cabin` column is dropped because it contains many missing values.
-- The charts are saved in the current working directory when the script is run.
+This project provides hands-on practice with:
+
+- Reading and inspecting structured data.
+- Cleaning missing and duplicate data.
+- Filtering, grouping, sorting, and summarizing records.
+- Calculating descriptive statistics.
+- Building charts to communicate findings.
+- Organizing a Python analysis project for version control and GitHub.
+
+## Limitations
+
+- This is an exploratory data analysis project; it does not train a predictive machine-learning model.
+- Mean imputation for age is used as a simple demonstration and may not be the best method for every analysis.
+- The `Cabin` column is excluded from the analysis because it contains many missing values.
 
 ## Author
 
@@ -140,4 +156,4 @@ By working through this project, you can practice:
 
 ---
 
-If you find this project useful for learning Python data analysis, feel free to star the repository.
+*This project was created for learning and demonstrating foundational Python data analysis skills.*
